@@ -40,8 +40,22 @@ seed.sql # Dữ liệu mẫu
 ---
 
 ## ⚙️ Cấu hình cơ sở dữ liệu
-Tạo file `db/schema.sql` với các bảng cần thiết (ví dụ: `NhanVien`, `TaiKhoan`, `VeTau`, `Toa`, `BangGia`).  
-Kết nối trong code qua:
+📂 Khôi phục Cơ sở dữ liệu từ PTUD.bak
+Mở SQL Server Management Studio (SSMS).
+
+Kết nối với SQL Server instance của bạn.
+
+Click phải vào mục Databases → chọn Restore Database...
+
+Trong tab Source, chọn:
+
+Device → click ... → Add → chọn file PTUD.bak.
+
+Trong tab Destination, nhập tên database (ví dụ: PTUD).
+
+Kiểm tra tab Files để đảm bảo đường dẫn file .mdf và .ldf hợp lệ trên máy bạn.
+
+Nhấn OK để tiến hành restore.
 ```java
 String url = "jdbc:mysql://localhost:3306/ve_tau";
 String user = "root";
@@ -49,9 +63,7 @@ String password = "your_password";
 🚀 Cách chạy dự án trong Eclipse
 Clone dự án từ GitHub
 
-bash
-Sao chép
-Chỉnh sửa
+
 git clone https://github.com/<tên_user>/<tên_repo>.git
 Import vào Eclipse
 
